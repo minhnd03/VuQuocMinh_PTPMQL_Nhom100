@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form HTML - Vũ Quốc Minh 2121051527</title>
+</head>
+<body>
+  <h2>Thông tin cá nhân</h2>
+  <form action="#">
+    <label for="hoten">Họ và tên:</label>
+    <input type="text" id="hoten" name="hoten" value="Vũ Quốc Minh"><br><br>
+
+    <label for="mssv">Mã sinh viên:</label>
+    <input type="text" id="mssv" name="mssv" value="2121051527" readonly><br><br>
+
+    <!-- Input types cơ bản -->
+    Họ và tên đăng nhập: <input type="text" name="username"><br><br>
+    Mật khẩu: <input type="password" name="password"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    Số điện thoại: <input type="tel" name="phone"><br><br>
+    Ngày sinh: <input type="date" name="birthday"><br><br>
+    Tuổi: <input type="number" name="age" min="18" max="100"><br><br>
+    Chọn màu yêu thích: <input type="color" name="favcolor"><br><br>
+    Tìm kiếm: <input type="search" name="search"><br><br>
+    Website: <input type="url" name="homepage"><br><br>
+    File Upload: <input type="file" name="myfile"><br><br>
+    Thanh trượt: <input type="range" name="vol" min="0" max="100"><br><br>
+
+    <!-- Radio -->
+    Giới tính: 
+    <input type="radio" name="gender" value="Nam"> Nam
+    <input type="radio" name="gender" value="Nữ"> Nữ
+    <input type="radio" name="gender" value="Khác"> Khác
+    <br><br>
+
+    <!-- Checkbox -->
+    Sở thích:<br>
+    <input type="checkbox" name="hobby" value="Bóng đá"> Bóng đá<br>
+    <input type="checkbox" name="hobby" value="Âm nhạc"> Âm nhạc<br>
+    <input type="checkbox" name="hobby" value="Du lịch"> Du lịch<br><br>
+
+    <!-- Select -->
+    Ngành học:
+    <select name="major">
+      <option value="CNTT">Công nghệ thông tin</option>
+      <option value="KT">Kinh tế</option>
+      <option value="QTKD">Quản trị kinh doanh</option>
+    </select><br><br>
+
+    <!-- Textarea -->
+    Ghi chú thêm:<br>
+    <textarea name="note" rows="4" cols="40"></textarea><br><br>
+
+    <!-- Fieldset + Legend -->
+    <fieldset>
+      <legend>Địa chỉ</legend>
+      Thành phố: <input type="text" name="city"><br><br>
+      Quốc gia: <input type="text" name="country">
+    </fieldset>
+    <br>
+
+    <!-- Hidden -->
+    <input type="hidden" name="hiddenValue" value="Nội dung ẩn">
+
+    <!-- Disabled & Readonly -->
+    <input type="text" value="Không sửa được (readonly)" readonly><br><br>
+    <input type="text" value="Bị khóa (disabled)" disabled><br><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Gửi">
+    <input type="reset" value="Làm lại">
+    <button type="button" onclick="alert('Xin chào Vũ Quốc Minh - 2121051527')">Nhấn vào đây</button>
+  </form>
+</body>
+</html>
