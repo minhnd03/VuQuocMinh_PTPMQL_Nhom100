@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Tính chỉ số BMI";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div>
+        <label>Cân nặng (kg):</label>
+        <input type="number" name="canNang" step="0.1" required />
+    </div>
+    <div>
+        <label>Chiều cao (m):</label>
+        <input type="number" name="chieuCao" step="0.01" required />
+    </div>
+    <button type="submit">Tính BMI</button>
+</form>
+
+@if (ViewBag.BMI != null)
+{
+    <h3>Kết quả:</h3>
+    <p>Chỉ số BMI = <b>@ViewBag.BMI</b></p>
+    <p>Phân loại: <b>@ViewBag.KetQua</b></p>
+}

@@ -1,0 +1,41 @@
+@model DemoMVC.Models.CalcViewModel
+@{
+    ViewData["Title"] = "Bài 2 - Máy tính 2 số";
+}
+
+<!-- Bài làm của VU QUOC MINH - 2121051527 -->
+
+<h2>Bài 2: Tính Tổng / Hiệu / Tích / Thương</h2>
+
+<form asp-action="Index" method="post" class="mt-3">
+    <div class="mb-3">
+        <label asp-for="A" class="form-label"></label>
+        <input asp-for="A" class="form-control" type="number" step="any" />
+        <span asp-validation-for="A" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="B" class="form-label"></label>
+        <input asp-for="B" class="form-control" type="number" step="any" />
+        <span asp-validation-for="B" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Operation" class="form-label"></label>
+        <select asp-for="Operation" class="form-select">
+            <option value="sum">Tổng</option>
+            <option value="diff">Hiệu</option>
+            <option value="prod">Tích</option>
+            <option value="quot">Thương</option>
+        </select>
+        <span asp-validation-for="Operation" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Tính</button>
+</form>
+
+@if (Model?.Result != null)
+{
+    <hr />
+    <h4>Kết quả (@Model.Message): <strong>@Model.Result</strong></h4>
+}
