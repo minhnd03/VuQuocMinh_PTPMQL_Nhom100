@@ -1,6 +1,40 @@
+@model IEnumerable<MvcMovie.Models.Person>
+
 @{
-    ViewData["Title"] = "Person - Index";
+    ViewData["Title"] = "Index";
 }
-<h2>Person / Index</h2>
-<p>Xin chào! Đây là view Index của Person.</p>
-<p>Tác giả: <strong>Vu Quoc Minh</strong> - MSSV: <strong>2121051527</strong></p>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
