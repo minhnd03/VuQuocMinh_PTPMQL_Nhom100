@@ -1,6 +1,6 @@
 namespace DemoMVC.Models
 {
-    public class Person
+    public class PersonViewModel
     {
         public string Name { get; set; }   
         public int BirthYear { get; set; } 

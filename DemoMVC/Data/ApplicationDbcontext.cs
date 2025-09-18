@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
+using DemoMVC.Models;
 
 namespace DemoMVC.Data
 {
@@ -10,7 +10,7 @@ namespace DemoMVC.Data
         {
         }
 
-        // Bảng Person trong CSDL
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<Person> Person { get; set; }
+        public DbSet<Employee> Employee { get; set; }
     }
 }

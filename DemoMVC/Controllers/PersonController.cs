@@ -3,10 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Data;
-using MvcMovie.Models;
+using DemoMVC.Data;
+using DemoMVC.Models;
 
-namespace MvcMovie.Controllers
+namespace DemoMVC.Controllers
 {
     public class PersonController : Controller
     {
@@ -15,6 +15,12 @@ namespace MvcMovie.Controllers
         public PersonController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        // GET: Person
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Person.ToListAsync());
         }
 
         // GET: Person/Create
@@ -26,7 +32,7 @@ namespace MvcMovie.Controllers
         // POST: Person/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address,Email")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -56,7 +62,7 @@ namespace MvcMovie.Controllers
         // POST: Person/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address,Email")] Person person)
         {
             if (id != person.PersonId)
             {

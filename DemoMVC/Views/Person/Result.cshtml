@@ -1,9 +1,17 @@
 @model DemoMVC.Models.Person
 
+@{
+    ViewData["Title"] = "Kết quả";
+}
+
 <h2>Kết quả</h2>
 
-<p>Họ tên: @Model.Name</p>
-<p>Năm sinh: @Model.BirthYear</p>
-<p>Tuổi: @Model.Age</p>
+<div>
+    <p><strong>ID:</strong> @Model.PersonId</p>
+    <p><strong>Họ và tên:</strong> @Model.FullName</p>
+    <p><strong>Địa chỉ:</strong> @Model.Address</p>
+</div>
 
-<a href="/Person">Nhập lại</a>
+<div>
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>
